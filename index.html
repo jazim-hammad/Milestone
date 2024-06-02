@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Milestone: Home</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Link to the compiled CSS from SCSS -->
     <script src="theme.js" defer></script>
-    <!-- External JS for theme toggling -->
+    <script src="trail.js" defer></script>
+    <script type="module" src="firebase-init.js" defer></script>
   </head>
   <body>
     <div class="theme-switcher">
@@ -28,7 +28,9 @@
       <p class="tagline">Paving Your Path to Career Success</p>
       <div class="buttons">
         <a href="chatbot.html" class="btn">Talk to Our AI Advisor</a>
-        <a href="signup-login.html" class="btn">Login / Sign Up</a>
+        <div class="login-status">
+          <a href="signup-login.html" class="btn">Login / Sign Up</a>
+        </div>
       </div>
     </div>
     <footer>
