@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milestone: AI Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="theme.js" defer></script>
+    <script src="trail.js" defer></script>
+    <script src="chat.js" defer></script>
+  </head>
+  <body>
+    <div class="theme-switcher">
+      <input
+        type="checkbox"
+        id="theme-toggle"
+        role="switch"
+        class="liquid-2"
+        aria-label="Toggle theme"
+      />
+      <label for="theme-toggle" class="switch-label">
+        <span class="icon sun">☀️</span>
+        <span class="icon moon">🌙</span>
+      </label>
+    </div>
+    <a href="index.html" class="back-button">Back</a>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2 id="chat-greeting">Hi, I'm Miles, your career guide assistant.</h2>
+      </div>
+      <div class="chat-history">
+        <button id="new-chat-button" aria-label="Start a new chat">
+          New Chat
+        </button>
+        <ul id="chat-list">
+          <!-- Chat history will be dynamically added here -->
+        </ul>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <!-- Messages will be dynamically added here -->
+      </div>
+      <div class="chat-input">
+        <button id="upload-button" aria-label="Upload file">
+          <img
+            width="24"
+            height="24"
+            src="https://img.icons8.com/ios/50/attach.png"
+            alt="attach"
+          />
+        </button>
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Type your message here..."
+        />
+        <button id="send-button" aria-label="Send message">
+          <img
+            width="24"
+            height="24"
+            src="https://img.icons8.com/ios-filled/50/sent.png"
+            alt="sent"
+          />
+        </button>
+        <input type="file" id="file-input" style="display: none" />
+      </div>
+    </div>
+    <footer>
+      <p>© 2024 Milestone. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

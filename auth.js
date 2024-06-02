@@ -24,12 +24,10 @@ const signUp = async (email, password, firstName, lastName, username) => {
     );
     const user = userCredential.user;
 
-    // Update the user profile with first name, last name, and username
     await updateProfile(user, {
       displayName: `${firstName} ${lastName}`,
     });
 
-    // Store additional user information in Firestore
     await setDoc(doc(db, "users", user.uid), {
       firstName,
       lastName,
@@ -49,14 +47,12 @@ const login = async (identifier, password) => {
   try {
     let userCredential;
     if (identifier.includes("@")) {
-      // Login with email
       userCredential = await signInWithEmailAndPassword(
         auth,
         identifier,
         password
       );
     } else {
-      // Login with username
       const q = query(
         collection(db, "users"),
         where("username", "==", identifier)
@@ -80,7 +76,6 @@ const login = async (identifier, password) => {
   }
 };
 
-// Event listeners for form submission
 document.querySelector(".signup form").addEventListener("submit", (e) => {
   e.preventDefault();
   const firstName = e.target.firstName.value;
