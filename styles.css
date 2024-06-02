@@ -6,6 +6,9 @@
   --text-color: #000;
   --secondary-background-color: #222;
   --secondary-text-color: #fff;
+  --button-bg-color: #d3d3d3; /* Light grey for buttons */
+  --button-hover-bg-color: #555; /* Dark grey for button hover */
+  --button-hover-text-color: #d3d3d3; /* Light grey for button text on hover */
 }
 
 .dark-theme {
@@ -13,6 +16,9 @@
   --text-color: #fff;
   --secondary-background-color: #fff;
   --secondary-text-color: #000;
+  --button-bg-color: #555; /* Dark grey for buttons */
+  --button-hover-bg-color: #d3d3d3; /* Light grey for button hover */
+  --button-hover-text-color: #555; /* Dark grey for button text on hover */
 }
 
 body {
@@ -93,8 +99,8 @@ body .back-button {
   top: 20px;
   right: 20px;
   padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
+  background-color: #000; /* Solid black for back button */
+  color: #fff; /* Solid white for back button text */
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
@@ -117,10 +123,15 @@ body .container .buttons .btn {
   display: inline-block;
   margin: 10px;
   padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
+  background-color: #000; /* Solid black for other buttons */
+  color: #fff; /* Solid white for other buttons */
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+body .container .buttons .btn:hover {
+  background-color: #333;
+  color: #fff;
 }
 body footer {
   position: fixed;
@@ -181,25 +192,27 @@ body .signup-login-container form {
   flex-direction: column;
 }
 body .signup-login-container form .name-fields {
+  width: 78%;
   display: flex;
-  gap: 2%;
-  margin-bottom: 1rem;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 0 auto;
 }
 body .signup-login-container form .name-fields input {
-  width: 48%;
+  width: 40%;
 }
 body .signup-login-container form input[type=text],
 body .signup-login-container form input[type=password],
 body .signup-login-container form input[type=email] {
-  width: 110%; /* Increased width by 10% */
-  padding: 10px;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  width: 70%; /* Adjusted width */
+  height: 10px;
+  justify-content: center;
+  display: flex;
+  margin: 10px auto; /* Adjusted margin */
+  padding: 12px;
+  border: none;
+  outline: none;
   border-radius: 5px;
-  background: var(--background-color);
-  color: var(--text-color);
-  transition: border-color 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 body .signup-login-container form input[type=text]:focus,
 body .signup-login-container form input[type=password]:focus,
@@ -207,16 +220,25 @@ body .signup-login-container form input[type=email]:focus {
   border-color: var(--text-color);
 }
 body .signup-login-container form button {
-  padding: 10px;
-  background: #000;
-  color: #fff;
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 30px;
+  outline: none;
   border: none;
   border-radius: 5px;
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  transition: 0.2s ease-in, background-color 0.3s, color 0.3s;
   cursor: pointer;
-  transition: background 0.3s;
 }
 body .signup-login-container form button:hover {
-  background: #333;
+  background-color: var(--button-hover-bg-color);
+  color: var(--button-hover-text-color);
 }
 body .main {
   width: 350px;
@@ -250,11 +272,11 @@ body .main .login label {
 }
 body .main .signup input,
 body .main .login input {
-  width: 110%; /* Increased width by 10% */
+  width: 70%; /* Adjusted width */
   height: 10px;
   justify-content: center;
   display: flex;
-  margin: 20px auto;
+  margin: 10px auto; /* Adjusted margin */
   padding: 12px;
   border: none;
   outline: none;
@@ -263,14 +285,14 @@ body .main .login input {
 }
 body .main .signup .name-fields,
 body .main .login .name-fields {
+  width: 78%;
   display: flex;
-  gap: 2%;
   justify-content: center;
   margin: 0 auto;
 }
 body .main .signup .name-fields input,
 body .main .login .name-fields input {
-  width: 48%;
+  width: 40%;
 }
 body .main .signup button,
 body .main .login button {
@@ -285,12 +307,15 @@ body .main .login button {
   outline: none;
   border: none;
   border-radius: 5px;
-  transition: 0.2s ease-in;
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
+  transition: 0.2s ease-in, background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
 body .main .signup button:hover,
 body .main .login button:hover {
-  background: #333;
+  background-color: var(--button-hover-bg-color);
+  color: var(--button-hover-text-color);
 }
 body .main .login {
   height: 460px;
